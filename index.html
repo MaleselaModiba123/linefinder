@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Linefinder — Find your place in any PDF</title><meta name="description" content="Select text in a PDF to find its page and visual line number. Your documents stay in your browser."><link rel="stylesheet" href="vendor/pdf_viewer.css"><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><a class="brand" href="./"><span class="logo">≡</span> linefinder<span class="badge">PDF TOOL</span></a><span class="privacy"><span class="dot"></span> Files stay on your device</span></header>
+<main>
+<section class="intro"><div class="eyebrow">A LITTLE CLARITY, LINE BY LINE</div><h1>Find the line.<br><span>Keep your place.</span></h1><p>Open a PDF and highlight any text.<br>We’ll tell you exactly which page and line it’s on.</p></section>
+<section class="workspace" aria-label="PDF line finder">
+<div class="toolbar"><div class="file-info"><span class="file-icon">▤</span><div><strong id="filename">Your document goes here</strong><small id="filemeta">PDF · processed privately in your browser</small></div></div><button id="upload" class="primary">↥ <span>Open PDF</span></button><input type="file" id="file" accept=".pdf,application/pdf" hidden></div>
+<div class="workbody">
+<div class="reader">
+<div id="empty" class="empty"><div class="paper-icon"><i></i><i></i><i></i><i></i><span>PDF</span></div><h2>A page worth finding.</h2><p>Drop your PDF here, or open one to get started.</p><button id="sample" class="sample">Try a sample document <span>↗</span></button><small>Text-based PDFs supported · No uploads to a server</small></div>
+<div id="navigation" hidden><button id="prev" aria-label="Previous page">←</button><label>Page <input id="pagenum" type="number" min="1" value="1" aria-label="Page number"> <span id="pagecount">of 1</span></label><button id="next" aria-label="Next page">→</button><span class="navhint">Drag across text to select</span></div>
+<div id="viewport" hidden><div id="page"><canvas id="canvas"></canvas><div id="text-layer" class="textLayer"></div><div id="gutter" aria-hidden="true"></div></div></div>
+</div>
+<aside><div class="eyebrow">YOUR SELECTION</div><div id="result" aria-live="polite"><div class="selection-icon">⌖</div><h2>Every line has a place.</h2><p>Highlight text in your document and its location will appear here.</p></div><div class="method"><span>HOW WE COUNT</span><p>Lines start at 1 on each page. We count visible text rows from top to bottom, including headings and footers. Blank space is skipped.</p><p>Text at the same height in different columns shares a line number. These are visual line numbers, not printed paragraph numbers.</p></div></aside>
+</div><div id="status" role="status">Ready when you are.</div>
+</section><footer><span>Less searching. More reading.</span><span>Made for the small details.</span></footer>
+</main><script type="module" src="app.js"></script></body></html>
